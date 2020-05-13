@@ -3,20 +3,29 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
+var name = 'p';
+let name = 'i';
+let name = 'N';
+const name = 'nick-marconato';
 
-
-
+var p = 200000;
+let i = 0.05;
+let N = 30;
 
 
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
 
-Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12. 
+Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12.*/ 
 
-Create another variable called `periods` and give it the value of years*12.
+var name = 'monthlyInterestRate';
+var monthlyInterestRate = i/12;
+
+/*Create another variable called `periods` and give it the value of years*12.
 */
 
-
+var name = 'p';
+var p = (N)*12;
 
 
 // 🏡 Task 2: Harder Math
