@@ -3,30 +3,27 @@
 // 🏡 Task 1: Variables
 /* Create variables for principal, interest rate, and years. Assign them the values 200000, 0.05, and 30 respectively. Create another value called name and give it the value of your own name.
 */
-var name = 'p';
-let name = 'i';
-let name = 'N';
-const name = 'nick-marconato';
 
-var p = 200000;
-let i = 0.05;
-let N = 30;
+let principal = 200000;
+const interestRate = 0.05;
+let nYears = 30;
+const name = "nick";
 
+console.log(principal)
+console.log(interestRate)
+console.log(nYears)
+console.log(name)
 
 // 🏡 Task 1.5: Simple Math
 /* To create a monthly mortgage rate calculator, we need to know the number of years in months and the monthly interest rate. 
 
 Create a variable called `monthlyInterestRate` and give it the value of interest rate divided by 12.*/ 
 
-var name = 'monthlyInterestRate';
-var monthlyInterestRate = i/12;
+let monthlyInterestRate = interestRate / 12;
 
-/*Create another variable called `periods` and give it the value of years*12.
-*/
+/*Create another variable called `periods` and give it the value of years*12.*/
 
-var name = 'p';
-var p = (N)*12;
-
+let periods = nYears * 12;
 
 // 🏡 Task 2: Harder Math
 /* Create your calculator! Use the formula in the ReadMe to run calculations on your numbers. Save the final value into a variable called monthlyRate.
@@ -38,8 +35,19 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 When your math is correct, monthlyRate will equal 1073.64
 */
 
+/*numerator formula P * [ I ( 1 + I )^N ] 
+denominator formula [ ( 1 + I )^N – 1 ] 
+*/
 
+let numerator = principal * (monthlyInterestRate * Math.pow((1 + monthlyInterestRate), periods))
 
+let denominator = Math.pow((1 + monthlyInterestRate), periods) - 1
+
+const monthlyRate = function calculator(numerator, denominator){
+    return (numerator / denominator);
+}
+
+console.log(monthlyRate());
 
 // 🏡 Task 3: Function
 /* Create a function called `mortgageCalculator` that combines all of the steps from task 1 and 2 and returns a sentence "{Name}, your monthly rate is ${monthlyRate}"
@@ -55,7 +63,7 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 /* Substitute the variables in your functions for parameters such that you can substitute `P`, `I`, and `N` when you call the function.
 
 For example,
-mortgageCalculator(2000000, 0.05, 30); <-- should return 1,073.64
+mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
 
