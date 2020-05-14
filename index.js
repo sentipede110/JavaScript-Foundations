@@ -73,7 +73,12 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-mortgageCalculator(200000, 0.05, 30)
+function calculateMortgage(principal, interestRate, nYears){
+    console.log( )
+}
+
+
+calculateMortgage(200000, 0.05, 30)
 
 
 // 🏡 Task 5: Conditionals
