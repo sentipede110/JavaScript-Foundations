@@ -60,10 +60,25 @@ console.log(monthlyRate)
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-function mortgageCalculator(name, monthlyRate){
-console.log('${name}, your monthly rate is ${monthlyRate}');
+/// THIS ONE DOESN NOT WORK!!!
+// function mortgageCalculator(name, monthlyRate){
+// return('${name} your monthly rate is ${monthlyRate}');
+// }
+// console.log(mortgageCalculator())
+
+// / THIS ONE DOESN NOT WORK EITHER!!!
+// function mortgageCalculator(name, monthlyRate){
+// return name + 'your monthly rate is $ ' + monthlyRate();
+// }
+// console.log(mortgageCalculator())
+
+
+function mortgageCalculator(){
+    let mortgage = name + ', your monthly rate is $';
+    let statement = mortgage + monthlyRate;
+    return statement;
 }
-mortgageCalculator()
+console.log(mortgageCalculator());
 
 
 // 🏡 Task 4: Arguments and Parameters
@@ -73,12 +88,26 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-function calculateMortgage(principal, interestRate, nYears){
-    console.log( )
+// let p = 200000;
+// let i = 0.05;
+// let n = 30;
+
+// let numerator2 = p * ((i/12) * Math.pow((1 + (i/12)), (n*12)));
+
+// console.log(numerator2);
+
+// let denominator2 = Math.pow((1 + (i/12)), (n*12)) - 1;
+
+// console.log(denominator2);
+
+
+function mortgageCalculatorV4(p, i, n){
+    let numerator2 = p * ((i/12) * Math.pow((1 + (i/12)), (n*12)));
+    let denominator2 = Math.pow((1 + (i/12)), (n*12)) - 1;
+    const monthlyRate2 = (numerator2 / denominator2).toFixed(2);
+    return monthlyRate2;
 }
-
-
-calculateMortgage(200000, 0.05, 30)
+console.log(mortgageCalculatorV4(200000, 0.05, 30));
 
 
 // 🏡 Task 5: Conditionals
@@ -87,6 +116,37 @@ calculateMortgage(200000, 0.05, 30)
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
 
+
+function mortgagecalculatorV5(p, i, n, cs){
+
+const penalty = 0.005;
+let numeratorV5 = p * ((i+penalty)/12) * Math.pow((1 + ((i+penalty)/12)), (n*12));
+let denominatorV5 = Math.pow((1 + ((i+penalty)/12)), (n*12)) - 1;
+
+if (cs > 740){
+const penalty = -0.005;
+let numeratorV5 = p * ((i+penalty)/12) * Math.pow((1 + ((i+penalty)/12)), (n*12));
+let denominatorV5 = Math.pow((1 + ((i+penalty)/12)), (n*12)) - 1;
+const monthlyRateV5_1 = (numeratorV5 / denominatorV5).toFixed(2);
+return (name + ", your monthly rate is $ " + monthlyRateV5_1);
+
+} else if (cs < 660){
+const penalty = +0.005;
+let numeratorV5 = p * ((i+penalty)/12) * Math.pow((1 + ((i+penalty)/12)), (n*12));
+let denominatorV5 = Math.pow((1 + ((i+penalty)/12)), (n*12)) - 1;
+const monthlyRateV5_2 = (numeratorV5 / denominatorV5).toFixed(2);
+return (name + ", your monthly rate is $ " + monthlyRateV5_2);
+
+}else{
+const penalty = 0
+let numeratorV5 = p * ((i+penalty)/12) * Math.pow((1 + ((i+penalty)/12)), (n*12));
+let denominatorV5 = Math.pow((1 + ((i+penalty)/12)), (n*12)) - 1;
+const monthlyRateV5_3 = (numeratorV5 / denominatorV5).toFixed(2);
+return (name + ", your monthly rate is $ " + monthlyRateV5_3);
+}
+}
+
+console.log(mortgagecalculatorV5(200000, 0.05, 30, 680))
 
 
 
@@ -107,6 +167,18 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 
+function variableInterestRate(p, i, n){
+    let numerator2 = p * ((i/12) * Math.pow((1 + (i/12)), (n*12)));
+    let denominator2 = Math.pow((1 + (i/12)), (n*12)) - 1;
+    let monthlyRateV6 = (numerator2 / denominator2).toFixed(2);
+
+    for (let i = (i - 0.02); i < (i +0.02); i+=0.005){
+
+        console.log( name + ", with an interest rate of " + i + ", your monthly rate is " + monthlyRateV6);
+    }
+}
+
+console.log(variableInterestRate(200000, 0.04, 30))
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
